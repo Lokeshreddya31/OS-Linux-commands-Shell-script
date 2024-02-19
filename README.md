@@ -382,11 +382,13 @@ sed  '/tom/s/5000/6000/' file23
 
 sed -n -e '1,5p' file23
 ## OUTPUT
+```
 1001 | Ram | 10000 | HR
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
 1005 | Sam |  5000 | HR
+```
 
 sed -n -e '2,/Joe/p' file23
 ## OUTPUT
@@ -488,11 +490,13 @@ cat > file21
 ``` 
 sort file21
 ## OUTPUT
+```
 1001 | Ram | 10000 | HR
 1002 | tom |  5000 | Admin
 1003 | Joe |  7000 | Developer
 1004 | Sit |  7000 | Dev
 1005 | Sam |  5000 | HR
+```
 
 cat > file22
 ```
