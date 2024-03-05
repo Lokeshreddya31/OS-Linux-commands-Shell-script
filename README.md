@@ -598,11 +598,7 @@ gzip backup.tar
 ls .gz
 ## OUTPUT
 ```
-backup.tar.gz
-bench.py
-hello.c
-hello.js
-readme.txt
+backup.tar.gz  bench.py       hello.c        hello.js       readme.txt
 ```
 
 gunzip backup.tar.gz
@@ -622,8 +618,10 @@ echo 'echo Hello World‘; exit 0 >> my-script.sh
 chmod 755 my-script.sh
 ./my-script.sh
 ## OUTPUT
+```
+Hello World
+```
 
- 
 cat << stop > herecheck.txt
 ```
 hello in this world
@@ -697,22 +695,31 @@ The $$ is  5564
  
 ls file1
 ## OUTPUT
+```
+file1  file2  file
+```
 
 echo $?
 ## OUTPUT 
+```
+0
+```
 ./one
 bash: ./one: Permission denied
  
 echo $?
 ## OUTPUT 
+```
+126
+```
  
 abcd
- 
 echo $?
  ## OUTPUT
+```
+127
+```
 
-
- 
 # mis-using string comparisons
 
 cat < strcomp.sh 
@@ -749,7 +756,9 @@ chmod 755 strcomp.sh
  
 ./strcomp.sh 
 ## OUTPUT
-
+```
+baseball is less than hockey
+```
 
 # check file ownership
 cat < psswdperm.sh 
@@ -776,6 +785,9 @@ fi
  ```
 ./psswdperm.sh
 ## OUTPUT
+```
+Sorry, you are not the owner of the /etc/passwd file
+```
 
 # check if with file location
 cat>ifnested.sh 
@@ -822,8 +834,11 @@ fi
 
 ./ifnested.sh 
 ## OUTPUT
-
-
+```
+“/home/sec The object exists, is it a file?”
+“No,/home/sec it is not a file!”
+“But /home/sec/.bash_history is a file!”
+```
 
 # using numeric test comparisons
 cat > iftest.sh 
@@ -866,6 +881,10 @@ $ chmod 755 iftest.sh
  
 $ ./iftest.sh 
 ##OUTPUT
+```
+“The test value 10 is greater than 5”
+“The values are different”
+```
 
 # check if a file
 cat > ifnested.sh 
@@ -915,6 +934,11 @@ $ chmod 755 ifnested.sh
  
 $ ./ifnested.sh 
 ##OUTPUT
+```
+“/home/sec The object exists, is it a file?”
+“No,/home/sec it is not a file!”
+“But /home/sec/.bash_history is a file!”
+```
 
 # looking for a possible value using elif
 cat elifcheck.sh 
@@ -943,7 +967,9 @@ $ chmod 755 elifcheck.sh
  
 $ ./elifcheck.sh 
 ## OUTPUT
-
+```
+Sorry, you are not allowed here
+```
 
 # testing compound comparisons
 cat> ifcompound.sh 
@@ -959,6 +985,9 @@ fi
 $ chmod 755 ifcompound.sh
 $ ./ifcompound.sh 
 ## OUTPUT
+```
+The file exists and you can write to it
+```
 
 # using the case command
 cat >casecheck.sh 
@@ -978,6 +1007,9 @@ esac
 $ chmod 755 casecheck.sh 
  
 $ ./casecheck.sh 
+```
+Sorry, you are not allowed here
+'''
  
 cat > whiletest
 ```bash
@@ -993,6 +1025,18 @@ done
 $ chmod 755 whiletest.sh
  
 $ ./whiletest.sh
+```
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+```
  
  
 cat untiltest.sh 
@@ -1006,8 +1050,12 @@ var1=$[ $var1 - 25 ]
 done
 ``` 
 $ chmod 755 untiltest.sh
- 
- 
+```
+100
+75
+50
+25
+'''
  
 cat forin1.sh 
 ```bash
