@@ -880,7 +880,8 @@ fi
 $ chmod 755 iftest.sh
  
 $ ./iftest.sh 
-##OUTPUT
+
+## OUTPUT
 ```
 “The test value 10 is greater than 5”
 “The values are different”
@@ -933,7 +934,8 @@ fi
 $ chmod 755 ifnested.sh
  
 $ ./ifnested.sh 
-##OUTPUT
+
+## OUTPUT
 ```
 “/home/sec The object exists, is it a file?”
 “No,/home/sec it is not a file!”
@@ -1025,6 +1027,7 @@ done
 $ chmod 755 whiletest.sh
  
 $ ./whiletest.sh
+## OUTPUT
 ```
 10
 9
@@ -1050,12 +1053,13 @@ var1=$[ $var1 - 25 ]
 done
 ``` 
 $ chmod 755 untiltest.sh
+## OUTPUT
 ```
 100
 75
 50
 25
-'''
+```
  
 cat forin1.sh 
 ```bash
@@ -1081,6 +1085,15 @@ done
  ```
  
 $ chmod 755 forin2.sh
+## OUTPUT
+```
+The next state is Alabama
+The next state is Alaska
+The next state is Arizona
+The next state is Arkansas
+The next state is California
+The next state is Colorado
+```
  
 cat forin2.sh 
 ```bash
@@ -1092,8 +1105,22 @@ echo “word:$test”
 done
 ```
 $ chmod 755 forin2.sh
+## OUTPUT
+```
+“word:I”
+“word:dont know if thisll”
+“word:work”
+```
+
  
 $ ./forin2.sh 
+## OUTPUT
+```
+“word:I”
+“word:dont know if thisll”
+“word:work”
+```
+
  
 cat forin3.sh 
 ```bash
@@ -1104,7 +1131,17 @@ do
 echo "word:$test"
 done
 ```
-$ ./forin3.sh 
+$ ./forin3.sh
+## OUTPUT
+```
+word:I
+word:don't
+word:know
+word:if
+word:this'll
+word:work
+```
+
  
 cat forin1.sh 
 ```bash
@@ -1118,6 +1155,15 @@ done
 $ chmod 755 forin1.sh
 
 ## OUTPUT
+```
+The next state is Alabama
+The next state is Alaska
+The next state is Arizona
+The next state is Arkansas
+The next state is California
+The next state is Colorado
+```
+
 cat forinfile.sh 
 ```bash
 #!/bin/bash
@@ -1139,6 +1185,15 @@ Bhadrachalam
 Khammam
 
 ## OUTPUT
+```
+Visit beautiful Hyderabad
+Visit beautiful Alampur
+Visit beautiful Basara
+Visit beautiful Warangal
+Visit beautiful Adilabad
+Visit beautiful Bhadrachalam
+Visit beautiful Khammam
+```
 
 
 cat forctype.sh 
@@ -1153,6 +1208,13 @@ done
 $ chmod 755 forctype.sh
 $ ./forctype.sh 
 ## OUTPUT
+```
+The value of i is 1
+The value of i is 2
+The value of i is 3
+The value of i is 4
+The value of i is 5
+```
 
 cat forctype1.sh 
 ```bash
@@ -1166,6 +1228,13 @@ done
 $ chmod 755 forctype.sh
 $ ./forctype1.sh 
 ## OUTPUT
+```
+1 - 5
+2 - 4
+3 - 3
+4 - 2
+5 - 1
+```
 
 cat fornested1.sh 
 ```bash
@@ -1184,6 +1253,20 @@ $ chmod 755 fornested1.sh
  
 $ ./fornested1.sh 
  ## OUTPUT
+ ```
+ Starting loop 1:
+ Inside loop: 1
+ Inside loop: 2
+ Inside loop: 3
+Starting loop 2:
+ Inside loop: 1
+ Inside loop: 2
+ Inside loop: 3
+Starting loop 3:
+ Inside loop: 1
+ Inside loop: 2
+ Inside loop: 3
+```
 
  
 cat forbreak.sh 
@@ -1200,11 +1283,17 @@ echo "Iteration number: $var1"
 done
 echo "The for loop is completed“
 ```
-## OUTPUT
 
 $ chmod 755 forbreak.sh
  
 $ ./forbreak.sh 
+ 
+## OUTPUT
+```
+Iteration number: 1
+Iteration number: 2
+The for loop is completed
+```
  
 cat forbreak.sh 
 ```bash
@@ -1226,6 +1315,13 @@ $ chmod 755 forcontinue.sh
  
 $ ./forcontinue.sh 
 ## OUTPUT
+```
+Iteration number: 1
+Iteration number: 2
+Iteration number: 4
+Iteration number: 5
+The for loop is completed
+```
  
 cat exread.sh 
 ```bash
@@ -1240,6 +1336,10 @@ $ chmod 755 exread.sh
  
 $ ./exread.sh 
 ## OUTPUT
+```
+Enter your name: Lokesh
+Hello Lokesh, welcome to my program.
+```
 
 
  cat exread1.sh
@@ -1251,9 +1351,13 @@ echo "Hello $name, welcome to my program. “
 ``` 
 $ chmod 755 exread1.sh 
 
+$ ./exread1.sh 
+
 ## OUTPUT
-
-
+```
+Enter your name: Lokesh
+Hello Lokesh, welcome to my program.
+```
 
 $ ./exread1.sh 
  
@@ -1272,12 +1376,13 @@ else
 echo "Usage: badtest1 a b"
 fi
 ```
-## OUTPUT
  ./funcex.sh 
-
  
  ./funcex.sh 1 2
-
+## OUTPUT
+```
+The result is 2
+```
  
 cat argshift.sh
 ```bash
@@ -1288,9 +1393,14 @@ cat argshift.sh
 done
 ```
 $ chmod 777 argshift.sh
+$ ./argshift.sh 1 2 3
 
 ## OUTPUT
-$ ./argshift.sh 1 2 3
+```
+1
+2
+3
+```
  
  cat argshift1.sh
 ```bash
@@ -1306,7 +1416,15 @@ for (( i=0;i<$ELEMENTS;i++)); do
 done
 ```
 $ chmod 777 argshift.sh
+
+$ ./argshift.sh 1 2 3
+
 ## OUTPUT
+```
+1
+2
+3
+```
 $ ./argshift.sh 1 2 3
  
 cat argshift.sh
@@ -1319,8 +1437,24 @@ while (( "$#" )); do
 done
 set +x
 ```
-## OUTPUT
  ./argshift.sh 1 2 3
+## OUTPUT
+```
+++ ((  3  ))
+++ echo 1
+1
+++ shift
+++ ((  2  ))
+++ echo 2
+2
+++ shift
+++ ((  1  ))
+++ echo 3
+3
+++ shift
+++ ((  0  ))
+++ set +x
+```
  
  
 cat > nc.awk
@@ -1352,6 +1486,22 @@ ubcdfghj
 ```
 awk -f nc.awk data.dat
 ## OUTPUT 
+```
+4 	 bash
+7 	 bcdfghj
+8 	 abcdfghj
+7 	 bcdfghj
+8 	 ebcdfghj
+7 	 bcdfghj
+8 	 ibcdfghj
+7 	 bcdfghj
+8 	 obcdfghj
+7 	 bcdfghj
+8 	 ubcdfghj
+total characters 79
+Number of Lines are 11
+No of Words count: 11
+```
  
 cat > palindrome.sh
 ```bash
@@ -1379,6 +1529,11 @@ else
 fi
 ```
 ## OUTPUT 
+```
+Enter the number
+5
+Number is palindrome
+```
 
 
 # RESULT:
